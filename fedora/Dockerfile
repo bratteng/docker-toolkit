@@ -1,4 +1,4 @@
-FROM quay.io/fedora/fedora:41
+FROM quay.io/fedora/fedora:43
 
 RUN --mount=target=/var/cache/dnf,type=cache,sharing=locked \
     dnf update -y \
@@ -27,7 +27,7 @@ RUN set -xe \
     && ${HOME}/.oh-my-zsh/custom/themes/powerlevel10k/gitstatus/install \
     && mkdir -p ${HOME}/.oh-my-zsh/cache/completions
 
-COPY --from=redis:7.2.5 /usr/local/bin/redis-cli /usr/local/bin/redis-cli
-COPY --from=redis:7.2.5 /usr/local/bin/redis-benchmark /usr/local/bin/redis-benchmark
+COPY --from=redis:8.0.2 /usr/local/bin/redis-cli /usr/local/bin/redis-cli
+COPY --from=redis:8.0.2 /usr/local/bin/redis-benchmark /usr/local/bin/redis-benchmark
 
 CMD ["/usr/bin/zsh"]
