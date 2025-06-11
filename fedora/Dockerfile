@@ -16,7 +16,9 @@ RUN --mount=target=/var/cache/dnf,type=cache,sharing=locked \
         hostname \
         procps \
         vim \
-        duf
+        duf \
+        yq \
+        grpcurl
 
 RUN --mount=target=/var/cache/dnf,type=cache,sharing=locked \
     set -xe \
