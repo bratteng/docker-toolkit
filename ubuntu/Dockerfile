@@ -1,4 +1,4 @@
-FROM ubuntu:noble-20250529
+FROM ubuntu:noble-20250619
 
 RUN --mount=target=/var/cache/apt/archives,type=cache,sharing=locked \
     apt-get update \
