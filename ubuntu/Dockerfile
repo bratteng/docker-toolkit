@@ -13,7 +13,8 @@ RUN --mount=target=/var/cache/apt/archives,type=cache,sharing=locked \
         iproute2 \
         wget \
         zsh \
-        btop
+        btop \
+        postgresql-client
 
 RUN --mount=target=/var/cache/apt/archives,type=cache,sharing=locked \
         set -xe \

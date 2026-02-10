@@ -18,7 +18,8 @@ RUN --mount=target=/var/cache/dnf,type=cache,sharing=locked \
         vim \
         duf \
         yq \
-        grpcurl
+        grpcurl \
+        postgresql
 
 RUN --mount=target=/var/cache/dnf,type=cache,sharing=locked \
     set -xe \
