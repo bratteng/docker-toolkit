@@ -1,4 +1,4 @@
-FROM ubuntu:noble-20260113
+FROM ubuntu:26.04
 
 RUN --mount=target=/var/cache/apt/archives,type=cache,sharing=locked \
     apt-get update \
