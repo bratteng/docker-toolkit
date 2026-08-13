@@ -1,4 +1,4 @@
-FROM quay.io/fedora/fedora:45
+FROM quay.io/fedora/fedora:46
 
 RUN --mount=target=/var/cache/dnf,type=cache,sharing=locked \
     dnf update -y \
