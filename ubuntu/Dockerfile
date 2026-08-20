@@ -1,4 +1,4 @@
-FROM ubuntu:noble-20260113
+FROM ubuntu:noble-20260810
 
 RUN --mount=target=/var/cache/apt/archives,type=cache,sharing=locked \
     apt-get update \
@@ -25,7 +25,7 @@ RUN set -xe \
         && ${HOME}/.oh-my-zsh/custom/themes/powerlevel10k/gitstatus/install \
         && mkdir -p ${HOME}/.oh-my-zsh/cache/completions
 
-COPY --from=redis:8.4.0 /usr/local/bin/redis-cli /usr/local/bin/redis-cli
-COPY --from=redis:8.4.0 /usr/local/bin/redis-benchmark /usr/local/bin/redis-benchmark
+COPY --from=redis:8.10.1 /usr/local/bin/redis-cli /usr/local/bin/redis-cli
+COPY --from=redis:8.10.1 /usr/local/bin/redis-benchmark /usr/local/bin/redis-benchmark
 
 CMD ["/usr/bin/zsh"]
